@@ -21,8 +21,11 @@ public class ExemploFor {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ExemploFor exemplo = new ExemploFor();
+        Pessoa pessoa = new Pessoa();
         int vetor [] = new int[4];
 
+
+        pessoa.setNome("tiago");
         System.out.println(" Digite seu login ");
         exemplo.setLogin(sc.nextLine());
 
