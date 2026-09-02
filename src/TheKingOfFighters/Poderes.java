@@ -1,4 +1,4 @@
-package Jujutsu;
+package TheKingOfFighters;
 
 public interface Poderes {
     public void energiaAlmaldicoada();

@@ -1,16 +1,22 @@
 package Thyzera;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class PrimeiraClasse{
 
     public static void main(String [] args){
 
         Produto produto = new Produto("Livro de estudo",500);
         Cliente cliente = new Cliente("Tiago aparecido","31411813812");
+        Scanner scanner = new Scanner(System.in);
+        cliente.ListDeClients();
 
 
-        System.out.println(produto.descricao + " este é o produto o seu valor é R$ " + produto.preco);
-        System.out.println(cliente.nome + " é o nome do cliente ");
-        System.out.println(cliente.cpf + " este é o seu cpf ");
+
+
     }
+
 }
 

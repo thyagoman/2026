@@ -1,4 +1,4 @@
-package Jujutsu;
+package TheKingOfFighters;
 
 public class IoriYagami extends TiposDeGolpes {
 

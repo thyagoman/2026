@@ -1,4 +1,4 @@
-package Jujutsu;
+package TheKingOfFighters;
 
 public abstract class TiposDeGolpes implements Poderes {
 

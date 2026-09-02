@@ -1,4 +1,4 @@
-package Jujutsu;
+package TheKingOfFighters;
 
 public class Raiden extends TiposDeGolpes {
 
