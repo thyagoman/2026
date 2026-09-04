@@ -26,7 +26,8 @@ public class ExemploFor {
 
 
         pessoa.setNome("tiago");
-        System.out.println(" Digite seu login ");
+        System.out.println(" Digite seu nome" +
+                " ");
         exemplo.setLogin(sc.nextLine());
 
         if (exemplo.getLogin().equals("Subzero2032")) {
