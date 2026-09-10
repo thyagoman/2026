@@ -1,7 +1,4 @@
-package Naruto;
-
-import java.util.ArrayList;
-import java.util.List;
+package Ebac.Naruto;
 
 public class Personagens implements Comparable <Personagens> {
     private String nome;

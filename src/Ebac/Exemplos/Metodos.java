@@ -1,4 +1,4 @@
-package Exemplos;
+package Ebac.Exemplos;
 
 import java.util.Scanner;
 

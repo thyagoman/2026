@@ -1,4 +1,4 @@
-package Exemplos;
+package Ebac.Exemplos;
 
 public class Pessoa {
     private String nome;
