@@ -44,8 +44,10 @@ public class OperacoesBasicas implements Apresentar {
 
         System.out.println("Digite um numero");
         setNumero1(scanner.nextDouble());
+        System.out.println("Digite um segundo numero");
+        setNumero2(scanner.nextDouble());
         try {
-            if (getNumero1() <=  0) {
+            if (getNumero1() <= 0 && getNumero2() < 0) {
                 throw new IllegalArgumentException("Zero não é permitido");
             }
         }  catch (IllegalArgumentException e){
@@ -53,24 +55,22 @@ public class OperacoesBasicas implements Apresentar {
             System.exit(1);
         }
 
-        System.out.println("Digite um segundo numero");
-        setNumero2(scanner.nextDouble());
-        try {
-            if (getNumero2() <=  0) {
-                throw new IllegalArgumentException("Zero não é permitido");
-            }
-        }  catch (IllegalArgumentException e){
-            System.out.println(e.getMessage());
-        }
         System.out.println("===============Resultado=============");
         double potenciaRetorno = Math.pow(getNumero1(),getNumero2());
         System.out.println(potenciaRetorno);
         return potenciaRetorno;
     }
 
-    public double raizQuadrada() {
+    public double raizQuadrada() throws Exception {
         System.out.println("Digite um numero para Raiz quadrada");
         setRaiz(scanner.nextDouble());
+        try{
+            if(getRaiz() <= 0){
+                throw new ArithmeticException("erro de calculo não digitar 0");
+            }
+        }catch(ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println("===============Resultado=============");
         double raizRetorno = Math.sqrt(getRaiz());
         System.out.println(raizRetorno);
