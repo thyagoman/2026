@@ -36,11 +36,7 @@ public class OperacoesAvancadas {
             System.out.println(e.getMessage());
         }
 
-
-
         }
-
-
 }
 
 
