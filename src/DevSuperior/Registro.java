@@ -1,20 +1,22 @@
 package DevSuperior;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
-public class Cadastro {
-   Alunos aluno = new Alunos();
+public class Registro {
     Scanner scanner = new Scanner(System.in);
+    List<Alunos> listaAlunos = new ArrayList<Alunos>();
 
     public void cadastrarAluno(){
         Alunos aluno = new Alunos();
-        cadastroNome();
-        cadastroCPF();
-        cadastroIdade();
+        cadastroNome(aluno);
+        cadastroCPF(aluno);
+        cadastroIdade(aluno);
+        listaAlunos.add(aluno);
     }
-
-    public void cadastroNome () {
+    public void cadastroNome (Alunos aluno) {
         while(true){
             try {
                 System.out.println("Bom dia, Insira o nome do Aluno");
@@ -32,9 +34,7 @@ public class Cadastro {
         }
     }
 
-
-
-    public void cadastroCPF(){
+    public void cadastroCPF(Alunos aluno){
         while (true){
             try {
                 System.out.println("Bom dia, Insira o cpf do Aluno");
@@ -55,7 +55,7 @@ public class Cadastro {
             }
         }}
 
-    public void cadastroIdade(){
+    public void cadastroIdade(Alunos aluno){
         while (true){
             try{
                 System.out.println("Digite sua idade");
@@ -73,5 +73,20 @@ public class Cadastro {
         }
         System.out.println("Cadastro Realizado");
     }
+
+    public void apresentarLista() {
+        for (Alunos aluno : listaAlunos) {
+            System.out.println(aluno.getNome());
+            System.out.println(aluno.getIdade());
+            System.out.println(aluno.getCpf());
+            System.out.println("=====================================================");
+
+        }
+    }
+
+
+
 }
+
+
 
