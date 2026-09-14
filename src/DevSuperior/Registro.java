@@ -27,10 +27,12 @@ public class Registro {
                     }
                 }
                 if (aluno.getNome().isEmpty()) {
-                    throw new NullPointerException();
+                    throw new NullPointerException("nome vazio");
                 }break;
-            } catch (IllegalArgumentException e) {
+            } catch (NullPointerException | IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
+            scanner.nextLine();
         }
     }
 
@@ -51,8 +53,8 @@ public class Registro {
             } catch (NullPointerException  | IllegalArgumentException f) {
                 System.out.println(f.getMessage());
                 System.out.println("Programa fechado");
-
             }
+            scanner.nextLine();
         }}
 
     public void cadastroIdade(Alunos aluno){
