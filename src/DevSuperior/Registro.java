@@ -8,8 +8,21 @@ import java.util.Scanner;
 public class Registro {
     Scanner scanner = new Scanner(System.in);
     List<Alunos> listaAlunos = new ArrayList<Alunos>();
+    List<Turmas> listaTurmas = new ArrayList<Turmas>();
 
-    public void cadastrarAluno(){
+    public void cadastrarTurma(){
+        Turmas turma = new Turmas();
+        cadastrarTurma(turma);
+        cadastrarSala(turma);
+        cadastrarTurno(turma);
+        listaTurmas.add(turma);
+        System.out.println(listaTurmas.getFirst());
+        System.out.println(listaTurmas.getLast());
+
+    }
+    //--------- Arquitetura para cadastrar alunos com tratamento de exceções ------//
+
+   public void cadastrarAluno(){
         Alunos aluno = new Alunos();
         cadastroNome(aluno);
         cadastroCPF(aluno);
@@ -55,7 +68,8 @@ public class Registro {
                 System.out.println("Programa fechado");
             }
             scanner.nextLine();
-        }}
+        }
+    }
 
     public void cadastroIdade(Alunos aluno){
         while (true){
@@ -70,9 +84,8 @@ public class Registro {
             }catch (InputMismatchException e){
                 System.out.println("Não pode letra bb");
                 scanner.nextLine();
-            }
-
-        }
+       }
+    }
         System.out.println("Cadastro Realizado");
     }
 
@@ -82,12 +95,67 @@ public class Registro {
             System.out.println(aluno.getIdade());
             System.out.println(aluno.getCpf());
             System.out.println("=====================================================");
-
-        }
+      }
     }
 
+    //--------- Arquitetura para cadastrar alunos com tratamento de exceções ------//
 
+    public void cadastrarTurma(Turmas turmas){
+        while(true){
+        try{
+            System.out.println("Digite o nome da turma");
+            turmas.setNomeDaTurma(scanner.nextLine());
+           for(int i = 0;i < turmas.getNomeDaTurma().length();i++ ){
+               if (Character.isDigit(turmas.getNomeDaTurma().charAt(i))){
+                   throw new IllegalArgumentException("Você errou digitou numero");
+                }}
+           if(turmas.getNomeDaTurma().isEmpty()){
+               throw new NullPointerException("preencha com o nome da Turma");
+           }
+        break;
+        }catch(NullPointerException | IllegalArgumentException e){
+            System.out.println(e.getMessage());
+      }
+    }
+   }
+   public void cadastrarSala(Turmas turmas){
+        while(true) {
+            try {
+                System.out.println("Digite a sala para cadastro");
+                turmas.setSala(scanner.nextLine());
+                if (turmas.getSala().isEmpty()) {
+                    throw new NullPointerException("Você deve digitar uma sala");
+                }break;
+            } catch (NullPointerException e) {
+                System.out.println(e.getMessage());
+            }
+            scanner.nextLine();
+        }
+   }
 
+   public void cadastrarTurno(Turmas turmas){
+        while(true) {
+            try {
+                System.out.println("Digite o turno, manha , tarde ou noite");
+                turmas.setTurno(scanner.nextLine());
+                for (int i = 0; i < turmas.getTurno().length(); i++)
+                    if (Character.isDigit(turmas.getTurno().charAt(i))) {
+                        throw new IllegalArgumentException(" digite o turno manha, tarde ou noite");
+                    }
+
+                if (turmas.getTurno().isEmpty()) {
+                    throw new NullPointerException("Não pode deixar o campo em branco");
+                }
+            break;
+            } catch (IllegalArgumentException | NullPointerException e) {
+                System.out.println("Voce digitou algo invalido " + e.getMessage());
+            } finally {
+                System.out.println("Obrigado ótimo dia");
+            }
+
+        }
+       scanner.nextLine();
+   }
 }
 
 
