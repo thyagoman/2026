@@ -1,6 +1,6 @@
 package DevSuperior;
 
-public class ProvaDeMatematica extends OperacoesBasicas {
+public abstract class  ProvaDeMatematica extends OperacoesBasicas {
 
     OperacoesBasicas operacoesBasicas = new OperacoesBasicas();
 
@@ -16,6 +16,8 @@ public class ProvaDeMatematica extends OperacoesBasicas {
         public void Finalizado () {
             super.Finalizado();
         }
+
+        public void abstract();
 
 
 }
