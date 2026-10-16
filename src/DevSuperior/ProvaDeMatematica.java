@@ -17,7 +17,7 @@ public abstract class  ProvaDeMatematica extends OperacoesBasicas {
             super.Finalizado();
         }
 
-        public void abstract();
+
 
 
 }

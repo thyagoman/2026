@@ -80,5 +80,17 @@ echo"<br>";
 var_dump($numero2 == $numero1);
 echo"<br>";
 var_dump($numero2 != $numero1);
+echo"<br>";
+
+const TESTE = 10;
+
+while (TESTE <= 10){
+    TESTE -= 1;
+    echo" Retirando ".TESTE;
+    if(TESTE == 0){
+        break;
+    }
+echo TESTE;
+}
 
 ?>
